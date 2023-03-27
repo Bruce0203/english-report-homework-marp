@@ -4,7 +4,7 @@ on:
     branches:
       - main
 jobs:
-  gradle:
+  build:
     strategy:
       matrix:
         os: [ ubuntu-latest ]
@@ -22,5 +22,10 @@ jobs:
         uses: docker://marpteam/marp-cli:v1.7.0
         with:
           args: README.md -o build/README.pdf
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_TO_BRANCH: gh-pages
+          NO_FORCE_PUSH: false
+          COMMIT_MSG: "deploed by actions"
         env:
           MARP_USER: root:root
