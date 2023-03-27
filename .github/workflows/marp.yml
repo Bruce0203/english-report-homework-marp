@@ -1,31 +1,24 @@
-name: Build
-on:
-  push:
-    branches:
-      - main
 jobs:
-  build:
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
-    runs-on: ${{ matrix.os }}
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
+  deploy:
+    runs-on: ubuntu-latest
 
-      - name: setup java
-        uses: actions/setup-java@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Node.js
+        uses: actions/setup-node@v3
         with:
-          distribution: temurin
-          java-version: 17
-      - name: Marp Build (README.pdf)
-        uses: docker://marpteam/marp-cli:v1.7.0
+          node-version: 12.x
+
+      - name: Install Dependencies
+        run: npm install --save-dev @marp-team/marp-cli -g
+
+      - name: Build Docs
+        run: marp index.md -o dist/index.html
+
+      - name: Deploy Docs
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          args: README.md -o build/README.pdf
-          GITHUB_REPOSITORY: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_TO_BRANCH: gh-pages
-          NO_FORCE_PUSH: false
-          COMMIT_MSG: "deploed by actions"
-        env:
-          MARP_USER: root:root
+          github_token: ${{ secrets.GH_ACTIONS_TOKEN }}
+          publish_dir: ./dist
