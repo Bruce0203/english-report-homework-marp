@@ -1,0 +1,26 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+jobs:
+  gradle:
+    strategy:
+      matrix:
+        os: [ ubuntu-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup java
+        uses: actions/setup-java@v2
+        with:
+          distribution: temurin
+          java-version: 17
+      - name: Marp Build (README.pdf)
+        uses: docker://marpteam/marp-cli:v1.7.0
+        with:
+          args: README.md -o build/README.pdf
+        env:
+          MARP_USER: root:root
