@@ -11,16 +11,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Node.js
-        uses: actions/setup-node@v3
+      - name: Marp Build (README.pdf)
+        uses: docker://marpteam/marp-cli:v1.7.0
         with:
-          node-version: 12.x
-
-      - name: Install Dependencies
-        run: npm install --save-dev @marp-team/marp-cli -g
-
-      - name: Build Docs
-        run: marp index.md -o dist/index.html
+          args: index.md -o dist/index.html
+        env:
+          MARP_USER: root:root
 
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
