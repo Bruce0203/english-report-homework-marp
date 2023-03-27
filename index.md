@@ -19,6 +19,11 @@ theme: uncover
 
 ---
 
+## 소프트웨어 vs 하드웨어?
+### 이 둘의 차이점은??
+
+---
+
 # ETC(Easier To Chagne)
 ## 바꾸기 쉽게!
 
@@ -34,20 +39,14 @@ theme: uncover
 ## 반복하지 말라!
 
 ---
-<style scoped>
-          * {
-            text-align: left;
-            margin-left: 10%;
-          }
-</style>
 ## SOLID 원칙
 
   
-**S**: SRP(단일 책임 원칙)
-**O**:OCP(개방 폐쇄 원칙) 
-**L** :LSP(리스코프 치환 법칙)
-**I**:   ISP(인터페이스 분리 원칙)
-**D**:DIP(의존관계 역전 원칙)
+* **S**: SRP(단일 책임 원칙)
+* **O**:OCP(개방 폐쇄 원칙) 
+* **L** :LSP(리스코프 치환 법칙)
+* **I**:   ISP(인터페이스 분리 원칙)
+* **D**:DIP(의존관계 역전 원칙)
 
 ---
 # SRP
@@ -82,3 +81,22 @@ theme: uncover
 
 # :star: 질문 받습니다 :star:
 
+---
+<style scoped>
+  * {
+    margin-bottom: 0%;
+    margin-top: 2.5%
+  }
+
+img {
+  max-width: 30%;
+  height: auto;
+}
+</style>
+# 참고 문헌 
+클린 아키텍처[소프트웨어 구조와 설계의 원칙]
+![image](http://image.yes24.com/goods/77283734/XL)
+
+---
+
+# THE END
