@@ -18,6 +18,13 @@ jobs:
         env:
           MARP_USER: root:root
 
+      - name: Marp Build (README.pdf)
+        uses: docker://marpteam/marp-cli:v1.7.0
+        with:
+          args: index.md -o dist/index.pdf
+        env:
+          MARP_USER: root:root
+
       - name: Deploy Docs
         uses: peaceiris/actions-gh-pages@v3
         with:
