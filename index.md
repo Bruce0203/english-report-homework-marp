@@ -8,16 +8,16 @@ theme: uncover
 
 ---
 
-![diagram-drawio](eat1.png)
+![diagram-dradwio](https://raw.githubusercontent.com/Bruce0203/english-report-homework-marp/main/eat1.png)
 
 ---
 
-![diagram-drawio](exercise1.png)
+![diagram-drawioa](https://raw.githubusercontent.com/Bruce0203/english-report-homework-marp/main/exercise1.png)
 
 ---
 
-![diagram-drawio](positive.png)
+![diagram-edrawio](https://raw.githubusercontent.com/Bruce0203/english-report-homework-marp/main/positive.png)
 
 ---
 
-![diagram-drawio](negative1.png)
+![diagram-drawiow](https://raw.githubusercontent.com/Bruce0203/english-report-homework-marp/main/negative1.png)
